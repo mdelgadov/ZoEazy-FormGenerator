@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:f="clr-namespace:ZoEazy.Resources.Fonts"
+    xmlns:pullToRefresh="clr-namespace:Syncfusion.Maui.Toolkit.PullToRefresh;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.TextInputLayout;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:shimmer="http://schemas.syncfusion.com/maui/toolkit">
+
+    <x:Double x:Key="sizeNone">0</x:Double>
+    <x:Double x:Key="size20">2</x:Double>
+    <x:Double x:Key="size40">4</x:Double>
+    <x:Double x:Key="size60">6</x:Double>
+    <x:Double x:Key="size80">8</x:Double>
+    <x:Double x:Key="size100">10</x:Double>
+    <x:Double x:Key="size120">12</x:Double>
+    <x:Double x:Key="size160">16</x:Double>
+    <x:Double x:Key="size200">20</x:Double>
+    <x:Double x:Key="size240">24</x:Double>
+    <x:Double x:Key="size280">28</x:Double>
+    <x:Double x:Key="size320">32</x:Double>
+    <x:Double x:Key="size360">36</x:Double>
+    <x:Double x:Key="size400">40</x:Double>
+    <x:Double x:Key="size480">48</x:Double>
+    <x:Double x:Key="size520">52</x:Double>
+    <x:Double x:Key="size560">56</x:Double>
+
+    <!--  https://fluent2.microsoft.design/typography/  -->
+    <OnIdiom
+        x:Key="IconSize"
+        x:TypeArguments="x:Double"
+        Default="20">
+        <OnIdiom.Desktop>32</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom
+        x:Key="IconSizeSmall"
+        x:TypeArguments="x:Double"
+        Default="12">
+        <OnIdiom.Desktop>18</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom
+        x:Key="LayoutPadding"
+        x:TypeArguments="Thickness"
+        Default="15">
+        <OnIdiom.Desktop>30</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <OnIdiom
+        x:Key="LayoutSpacing"
+        x:TypeArguments="x:Double"
+        Default="5">
+        <OnIdiom.Desktop>15</OnIdiom.Desktop>
+    </OnIdiom>
+
+    <FontImageSource
+        x:Key="IconDashboard"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.diagram_24_regular}"
+        Size="{StaticResource IconSize}"
+        Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground},
+                                Dark={StaticResource LightOnDarkBackground}}" />
+
+    <FontImageSource
+        x:Key="IconProjects"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.list_24_regular}"
+        Size="{StaticResource IconSize}"
+        Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground},
+                                Dark={StaticResource LightOnDarkBackground}}" />
+
+    <FontImageSource
+        x:Key="IconMeta"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.info_24_regular}"
+        Size="{StaticResource IconSize}"
+        Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground},
+                                Dark={StaticResource LightOnDarkBackground}}" />
+
+    <FontImageSource
+        x:Key="IconRibbon"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.ribbon_20_regular}"
+        Size="{StaticResource IconSize}"
+        Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground},
+                                Dark={StaticResource LightOnDarkBackground}}" />
+
+    <FontImageSource
+        x:Key="IconAdd"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.add_32_regular}"
+        Size="{StaticResource IconSize}"
+        Color="{AppThemeBinding Light={StaticResource Gray100},
+                                Dark={StaticResource LightOnDarkBackground}}" />
+
+    <FontImageSource
+        x:Key="IconDelete"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.delete_32_regular}"
+        Size="{StaticResource IconSize}"
+        Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground},
+                                Dark={StaticResource LightOnDarkBackground}}" />
+
+    <FontImageSource
+        x:Key="IconClean"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.broom_32_regular}"
+        Size="{StaticResource size240}"
+        Color="{AppThemeBinding Light={StaticResource DarkOnLightBackground},
+                                Dark={StaticResource LightOnDarkBackground}}" />
+
+    <FontImageSource
+        x:Key="IconLight"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.weather_sunny_28_regular}"
+        Size="{StaticResource size240}"
+        Color="{AppThemeBinding Light={StaticResource Gray100},
+                                Dark={StaticResource Black}}" />
+    <FontImageSource
+        x:Key="IconDark"
+        FontFamily="{x:Static f:FluentUI.FontFamily}"
+        Glyph="{x:Static f:FluentUI.weather_moon_28_regular}"
+        Size="{StaticResource size240}"
+        Color="{AppThemeBinding Dark={StaticResource Gray100},
+                                Light={StaticResource Black}}" />
+
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource DarkOnLightBackground}, Dark={StaticResource LightOnDarkBackground}}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="LineHeight" Value="1.29" />
+        <!--  22  -->
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray300}, Dark={StaticResource Gray600}}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    <Style x:Key="Caption2" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="LineHeight" Value="1.33" />
+        <!--  16  -->
+    </Style>
+    <Style x:Key="Caption1" TargetType="Label">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="LineHeight" Value="1.38" />
+        <!--  18  -->
+    </Style>
+    <Style x:Key="Caption1Strong" TargetType="Label">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="LineHeight" Value="1.38" />
+        <!--  18  -->
+        <Setter Property="FontFamily" Value="{OnPlatform WinUI=SegoeSemibold, iOS=.SFUI-SemiBold, MacCatalyst=.SFUI-SemiBold, Default=''}" />
+        <Setter Property="FontAttributes" Value="{OnPlatform Default=None, Android=Bold}" />
+    </Style>
+    <Style x:Key="Body2" TargetType="Label">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="LineHeight" Value="1.33" />
+        <!--  20  -->
+    </Style>
+    <Style x:Key="Body2Strong" TargetType="Label">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="LineHeight" Value="1.33" />
+        <!--  20  -->
+        <Setter Property="FontFamily" Value="{OnPlatform WinUI=SegoeSemibold, iOS=.SFUI-SemiBold, MacCatalyst=.SFUI-SemiBold, Default=''}" />
+        <Setter Property="FontAttributes" Value="{OnPlatform Default=None, Android=Bold}" />
+    </Style>
+    <Style x:Key="Body1" TargetType="Label">
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="LineHeight" Value="1.29" />
+        <!--  22  -->
+    </Style>
+    <Style x:Key="Body1Strong" TargetType="Label">
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="LineHeight" Value="1.29" />
+        <!--  22  -->
+        <Setter Property="FontFamily" Value="{OnPlatform WinUI=SegoeSemibold, iOS=.SFUI-SemiBold, MacCatalyst=.SFUI-SemiBold, Default=''}" />
+        <Setter Property="FontAttributes" Value="{OnPlatform Default=None, Android=Bold}" />
+    </Style>
+    <Style x:Key="Title3" TargetType="Label">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="LineHeight" Value="1.25" />
+        <!--  25  -->
+        <Setter Property="FontFamily" Value="{OnPlatform WinUI=SegoeSemibold, iOS=.SFUI-SemiBold, MacCatalyst=.SFUI-SemiBold, Default=''}" />
+        <Setter Property="FontAttributes" Value="{OnPlatform Default=None, Android=Bold}" />
+    </Style>
+    <Style x:Key="Title2" TargetType="Label">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="LineHeight" Value="1.27" />
+        <!--  28  -->
+        <Setter Property="FontFamily" Value="{OnPlatform WinUI=SegoeSemibold, iOS=.SFUI-SemiBold, MacCatalyst=.SFUI-SemiBold, Default=''}" />
+        <Setter Property="FontAttributes" Value="{OnPlatform Android=Bold, Default=None}" />
+    </Style>
+    <Style x:Key="Title1" TargetType="Label">
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="LineHeight" Value="1.21" />
+        <!--  34  -->
+        <Setter Property="FontAttributes" Value="{OnPlatform WinUI=None, Default=Bold}" />
+    </Style>
+    <Style x:Key="Display" TargetType="Label">
+        <Setter Property="FontSize" Value="60" />
+        <Setter Property="LineHeight" Value="1.17" />
+        <!--  70  -->
+        <Setter Property="FontAttributes" Value="{OnPlatform WinUI=None, Default=Bold}" />
+    </Style>
+
+    <Style TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 20" />
+        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="Padding" Value="{OnIdiom 15, Desktop=20}" />
+    </Style>
+
+    <Style x:Key="CardStyle" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 20" />
+        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightSecondaryBackground}, Dark={StaticResource DarkSecondaryBackground}}" />
+        <Setter Property="StrokeThickness" Value="0" />
+        <Setter Property="Padding" Value="{OnIdiom 15, Desktop=20}" />
+    </Style>
+
+    <sf:LabelStyle
+        x:Key="LightLabelStyle"
+        FontSize="{OnIdiom 18,
+                           Desktop=24}"
+        TextColor="{StaticResource DarkOnLightBackground}" />
+    <sf:LabelStyle
+        x:Key="DarkLabelStyle"
+        FontSize="{OnIdiom 18,
+                           Desktop=24}"
+        TextColor="{StaticResource LightOnDarkBackground}" />
+    <sf:LabelStyle
+        x:Key="LightErrorLabelStyle"
+        FontSize="{OnIdiom 18,
+                           Desktop=24}"
+        TextColor="{StaticResource DarkError}" />
+    <sf:LabelStyle
+        x:Key="DarkErrorLabelStyle"
+        FontSize="{OnIdiom 18,
+                           Desktop=24}"
+        TextColor="{StaticResource LightError}" />
+    <sf:LabelStyle
+        x:Key="LightErrorLabel"
+        FontAttributes="Bold"
+        FontSize="{OnIdiom 12,
+                           Desktop=12}"
+        TextColor="{StaticResource DarkError}" />
+    <sf:LabelStyle
+        x:Key="DarkErrorLabel"
+        FontAttributes="Bold"
+        FontSize="{OnIdiom 12,
+                           Desktop=12}"
+        TextColor="{StaticResource LightError}" />
+
+    <Style x:Key="ShimmerCustomViewStyle" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="Gray" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+    </Style>
+
+    <!--<Style Class="FlyoutItemLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />
+        <Setter Property="HeightRequest" Value="100" />
+    </Style>
+
+    <Style Class="FlyoutItemImageStyle" TargetType="Image">
+        <Setter Property="Aspect" Value="Fill" />
+    </Style>
+
+    <Style
+        ApplyToDerivedTypes="True"
+        Class="FlyoutItemLayoutStyle"
+        TargetType="Layout">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+    </Style>-->
+    <Style ApplyToDerivedTypes="True" TargetType="Shell">
+        <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />
+
+        <!--  alert: this is the color of the burger button on the corner, for win, it's contrast with the background, for others, almost universally white  -->
+
+        <Setter Property="Shell.ForegroundColor" Value="{OnPlatform WinUI={AppThemeBinding Light={StaticResource Black}, Dark={StaticResource Gray600}}, Default={StaticResource Gray100}}" />
+
+
+        <!--  This is used for the title color,  but I use a control to put more content  -->
+        <!--<Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource Accent}, Dark={StaticResource OnPrimaryDark}}" />-->
+        <Setter Property="Shell.DisabledColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray100}}" />
+        <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray100}}" />
+        <Setter Property="Shell.NavBarHasShadow" Value="True" />
+
+
+
+        <!--  THIS ONE IS "CORRECT" FOR ANDROID (DOES NOT CHANGE THE COLOR PROPERTY IN THE FLYOUT, IT WORKS IN THE TabBar  -->
+
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />
+        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />
+        <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Light={StaticResource TabBar}, Dark={StaticResource TabBarDark}}" />
+        <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Light={StaticResource TabBar}, Dark={StaticResource TabBarDark}}" />
+        <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray100}}" />
+    </Style>
+    <Style
+        x:Key="TitleView"
+        BasedOn="{StaticResource Headline}"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <!--<Setter Property="FontSize" Value="20" />-->
+        <Setter Property="Padding" Value="10,0,0,0" />
+    </Style>
+    <Style
+        x:Key="TitleIcon"
+        BasedOn="{StaticResource Headline}"
+        TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+        <!--<Setter Property="FontSize" Value="20" />-->
+        <Setter Property="FontFamily" Value="FASolid" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="Padding" Value="{OnIdiom Desktop='20,0,0,0', Default='0'}" />
+    </Style>
+</ResourceDictionary>
